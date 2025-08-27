@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { SparklesCore } from "@/components/ui/sparkles";
+import { SparklesCore } from "./ui/sparkles";
 
 export default function SparklesPreview() {
   return (
