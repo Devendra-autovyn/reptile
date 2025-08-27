@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import "./login.css";
+import RaptileLogo from "@/components/RaptileLogo";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -20,7 +21,10 @@ export default function Login() {
       <div className="top"></div>
       <div className="bottom"></div>
       <div className="center">
-        <h1 className="logo">🌀 Raptile</h1>
+        <div className="flex items-center gap-3 mb-2">
+          <RaptileLogo className="h-12 w-12" />
+          <h1 className="logo">Raptile</h1>
+        </div>
         <p className="tagline">Fast • Secure • Limitless</p>
 
         <form onSubmit={handleSubmit}>

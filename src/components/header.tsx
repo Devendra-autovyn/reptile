@@ -14,6 +14,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
+import RaptileLogo from "./RaptileLogo";
 
 const navLinks = [
     { href: "#", label: "Home", icon: LayoutGrid },
@@ -50,7 +51,7 @@ export default function Header() {
         }}
       >
         <div className="flex items-center gap-2">
-          <Wallet className="h-7 w-7 text-primary" />
+          <RaptileLogo />
           <h1 className="text-xl font-bold text-foreground">Raptile</h1>
         </div>
         

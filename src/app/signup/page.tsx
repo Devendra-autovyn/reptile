@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import "../login/login.css";
+import RaptileLogo from "@/components/RaptileLogo";
 
 export default function Signup() {
   const [formData, setFormData] = useState({
@@ -29,7 +30,10 @@ export default function Signup() {
       <div className="top"></div>
       <div className="bottom"></div>
       <div className="center signup-card">
-        <h1 className="logo">🌀 Raptile</h1>
+        <div className="flex items-center gap-3 mb-2">
+          <RaptileLogo className="h-12 w-12" />
+          <h1 className="logo">Raptile</h1>
+        </div>
         <p className="tagline">Create your account</p>
 
         <form onSubmit={handleSubmit}>

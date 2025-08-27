@@ -100,9 +100,8 @@
   font-size: 36px;
   font-weight: 700;
   margin: 0;
-  background: linear-gradient(45deg, #e43f5a, #1f4068, #e94560);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #fff;
+  letter-spacing: 1px;
 }
 
 .tagline {
@@ -144,14 +143,14 @@
 
 .center input[type="submit"] {
   cursor: pointer;
-  background: linear-gradient(45deg, #e43f5a, #e94560);
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6);
   color: #fff;
   font-weight: 600;
   transition: 0.3s;
 }
 
 .center input[type="submit"]:hover {
-  background: linear-gradient(45deg, #e94560, #e43f5a);
+  background: linear-gradient(45deg, #8b5cf6, #3b82f6);
 }
 
 .links {
