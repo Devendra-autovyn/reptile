@@ -5,8 +5,15 @@ import SplitBillCard from "@/components/dashboard/split-bill-card";
 import RecentTransactions from "@/components/dashboard/recent-transactions";
 import GoalsCard from "@/components/dashboard/goals-card";
 import InstantPayCard from "@/components/dashboard/instant-pay-card";
+import { redirect } from 'next/navigation';
 
 export default function Home() {
+  const isAuthenticated = false;
+
+  if (!isAuthenticated) {
+    redirect('/login');
+  }
+
   return (
     <div className="flex flex-col min-h-screen font-body">
       <Header />
