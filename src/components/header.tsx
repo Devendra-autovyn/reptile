@@ -95,8 +95,8 @@ export default function Header() {
                     animate={indicatorStyle}
                     transition={{ type: "spring", stiffness: 400, damping: 30 }}
                 >
-                  <div className="absolute inset-auto z-30 h-12 w-full rounded-full bg-cyan-400 blur-xl"></div>
-                  <div className="absolute inset-auto z-50 h-0.5 w-full bg-cyan-400"></div>
+                  <div className="absolute inset-auto z-30 h-12 w-full rounded-full bg-[#e43f5a] blur-xl"></div>
+                  <div className="absolute inset-auto z-50 h-0.5 w-full bg-[#e43f5a]"></div>
                 </motion.div>
             )}
         </nav>
