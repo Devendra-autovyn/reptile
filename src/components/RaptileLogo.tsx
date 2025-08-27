@@ -1,13 +1,13 @@
 // src/components/RaptileLogo.tsx
 import { cn } from "@/lib/utils";
+import './RaptileLogo.css';
 
 export default function RaptileLogo({ className }: { className?: string }) {
   return (
     <svg
       width="48"
       height="48"
-      viewBox="0 0 48 48"
-      fill="none"
+      viewBox="0 0 100 100"
       xmlns="http://www.w3.org/2000/svg"
       className={cn("h-8 w-8", className)}
     >
@@ -17,15 +17,35 @@ export default function RaptileLogo({ className }: { className?: string }) {
           <stop offset="100%" style={{ stopColor: "#8b5cf6" }} />
         </linearGradient>
       </defs>
+      
+      {/* Main Body/Head */}
       <path
-        d="M24 4C12.95 4 4 12.95 4 24C4 35.05 12.95 44 24 44C35.05 44 44 35.05 44 24C44 12.95 35.05 4 24 4Z"
-        stroke="url(#logo-gradient)"
-        strokeWidth="4"
-      />
-      <path
-        d="M21 16H31L23 24L31 32H21L13 24L21 16Z"
+        d="M50 10 C 30 20, 30 40, 50 50 C 70 40, 70 20, 50 10 Z"
         fill="url(#logo-gradient)"
       />
+      
+      {/* Wings */}
+      <path
+        d="M50 45 C 20 30, 10 50, 30 70 L 50 55 Z"
+        fill="url(#logo-gradient)"
+        opacity="0.8"
+      />
+      <path
+        d="M50 45 C 80 30, 90 50, 70 70 L 50 55 Z"
+        fill="url(#logo-gradient)"
+        opacity="0.8"
+      />
+
+      {/* Tail / Stinger */}
+      <g className="tail-group">
+        <path
+          d="M50 50 Q 50 80, 55 95"
+          stroke="url(#logo-gradient)"
+          strokeWidth="6"
+          fill="none"
+          strokeLinecap="round"
+        />
+      </g>
     </svg>
   );
 }

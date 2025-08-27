@@ -1,0 +1,13 @@
+@keyframes flick-tail {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(10deg) translateX(-5px);
+  }
+}
+
+.tail-group {
+  animation: flick-tail 2s ease-in-out infinite;
+  transform-origin: 50px 50px;
+}
