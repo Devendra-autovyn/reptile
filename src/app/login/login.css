@@ -55,7 +55,7 @@
 
 .top:before {
   transform: rotate(45deg);
-  background: #90ee90;
+  background: #e6e6fa;
 }
 .top:after {
   transform: rotate(135deg);
@@ -67,7 +67,7 @@
 }
 .bottom:after {
   transform: rotate(-135deg);
-  background: #9370DB;
+  background: #ccccff;
 }
 
 .center {
