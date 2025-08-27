@@ -9,13 +9,7 @@ import RaptileLogo from "@/components/RaptileLogo";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isLoaded, setIsLoaded] = useState(false);
   const router = useRouter();
-
-  useEffect(() => {
-    // Trigger the animation on component mount
-    setIsLoaded(true);
-  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,10 +17,8 @@ export default function Login() {
   };
 
   return (
-    <div className={`login-container ${isLoaded ? 'loaded' : ''}`}>
-      <div className="top"></div>
-      <div className="bottom"></div>
-      <div className="center">
+    <div className="login-page-container">
+      <div className="login-card">
         <div className="flex items-center gap-3 mb-2">
           <RaptileLogo className="h-12 w-12" />
           <h1 className="logo">Raptile</h1>

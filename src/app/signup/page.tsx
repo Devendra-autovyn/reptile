@@ -26,15 +26,13 @@ export default function Signup() {
   };
 
   return (
-    <div className="login-container">
-      <div className="top"></div>
-      <div className="bottom"></div>
-      <div className="center signup-card">
-        <div className="flex items-center gap-3 mb-2">
+    <div className="login-page-container">
+      <div className="login-card signup-card">
+        <div className="flex items-center gap-3 mb-2 justify-center">
           <RaptileLogo className="h-12 w-12" />
           <h1 className="logo">Raptile</h1>
         </div>
-        <p className="tagline">Create your account</p>
+        <p className="tagline text-center">Create your account</p>
 
         <form onSubmit={handleSubmit}>
           <div className="form-grid">
@@ -99,8 +97,8 @@ export default function Signup() {
           <input type="submit" value="Sign Up" />
         </form>
 
-        <div className="links">
-          <span>Already have an account?</span>
+        <div className="links mt-4 text-center">
+          <span>Already have an account? </span>
           <Link href="/login">Login</Link>
         </div>
       </div>
