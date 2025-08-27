@@ -27,7 +27,7 @@ export default function RootLayout({
       </head>
       <body 
         className="font-body antialiased bg-cover bg-center bg-fixed dark"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1538438253625-50a9d7188703?q=80&w=2070&auto=format&fit=crop')" }}
+        style={{ backgroundImage: "radial-gradient(ellipse at top, #1e3a8a, #000000), radial-gradient(ellipse at bottom, #4c1d95, #000000)" }}
         data-ai-hint="abstract background"
       >
         {children}
