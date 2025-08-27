@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   Wallet,
   User,
@@ -15,6 +15,7 @@ import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
 import RaptileLogo from "./RaptileLogo";
+import "./header.css";
 
 const navLinks = [
     { href: "#", label: "Home", icon: LayoutGrid },
@@ -25,6 +26,9 @@ const navLinks = [
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [activeTab, setActiveTab] = useState("Home");
+  const [indicatorStyle, setIndicatorStyle] = useState({});
+  const navRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
   useEffect(() => {
@@ -34,6 +38,17 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    const activeLink = navRef.current?.querySelector(`[data-label="${activeTab}"]`) as HTMLElement;
+    if (activeLink) {
+        setIndicatorStyle({
+            left: `${activeLink.offsetLeft}px`,
+            width: `${activeLink.offsetWidth}px`,
+        });
+    }
+  }, [activeTab]);
+
 
   const handleLogout = () => {
     router.push('/login');
@@ -56,15 +71,23 @@ export default function Header() {
         </div>
         
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-2">
+        <nav className="hidden md:flex items-center gap-2 relative" ref={navRef}>
             {navLinks.map((link) => (
-                <Button variant="ghost" asChild key={link.label}>
+                <Button
+                    variant="ghost"
+                    asChild
+                    key={link.label}
+                    data-label={link.label}
+                    onClick={() => setActiveTab(link.label)}
+                    className={cn("transition-colors duration-300", activeTab === link.label ? "text-primary-foreground" : "")}
+                >
                     <Link href={link.href}>
                         <link.icon className="mr-2 h-4 w-4" />
                         {link.label}
                     </Link>
                 </Button>
             ))}
+            <div className="nav-indicator" style={indicatorStyle}></div>
         </nav>
         
         <div className="hidden md:flex items-center">

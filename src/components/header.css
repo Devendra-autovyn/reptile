@@ -1,0 +1,26 @@
+.nav-indicator {
+  position: absolute;
+  bottom: -4px; /* Adjust as needed */
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899, #f59e0b);
+  background-size: 200% 100%;
+  border-radius: 9999px;
+  box-shadow: 0 0 10px #8b5cf6, 0 0 20px #ec4899;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  animation: lightning-flow 3s linear infinite;
+  z-index: -1;
+}
+
+@keyframes lightning-flow {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+nav button {
+    position: relative;
+    z-index: 1;
+}
