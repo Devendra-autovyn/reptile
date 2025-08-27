@@ -8,7 +8,7 @@ import InstantPayCard from "@/components/dashboard/instant-pay-card";
 import { redirect } from 'next/navigation';
 
 export default function Home() {
-  const isAuthenticated = false;
+  const isAuthenticated = true;
 
   if (!isAuthenticated) {
     redirect('/login');

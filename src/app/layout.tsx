@@ -26,8 +26,8 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </head>
       <body 
-        className="font-body antialiased bg-cover bg-center bg-fixed"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1554034483-04fda0d3507b?q=80&w=2070&auto=format&fit=crop')" }}
+        className="font-body antialiased bg-cover bg-center bg-fixed dark"
+        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1538438253625-50a9d7188703?q=80&w=2070&auto=format&fit=crop')" }}
         data-ai-hint="abstract background"
       >
         {children}
