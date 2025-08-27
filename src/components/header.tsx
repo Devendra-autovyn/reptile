@@ -13,6 +13,7 @@ import Link from "next/link";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useRouter } from "next/navigation";
 
 const navLinks = [
     { href: "#", label: "Home", icon: LayoutGrid },
@@ -23,6 +24,7 @@ const navLinks = [
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,6 +33,10 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleLogout = () => {
+    router.push('/login');
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full p-4 transition-all duration-300">
@@ -61,7 +67,7 @@ export default function Header() {
         </nav>
         
         <div className="hidden md:flex items-center">
-            <Button>
+            <Button onClick={handleLogout}>
                 <LogOut className="mr-2 h-4 w-4" />
                 Logout
             </Button>
@@ -86,7 +92,7 @@ export default function Header() {
                                 </Link>
                             </Button>
                         ))}
-                        <Button>
+                        <Button onClick={handleLogout}>
                             <LogOut className="mr-2 h-4 w-4" />
                             Logout
                         </Button>
