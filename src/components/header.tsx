@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import {
   Wallet,
   User,
@@ -5,11 +8,11 @@ import {
   History,
   LogOut,
 } from "lucide-react";
-
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const navLinks = [
     { href: "#", label: "Home", icon: LayoutGrid },
@@ -18,17 +21,27 @@ const navLinks = [
     { href: "#", label: "Profile", icon: User },
 ];
 
-
 export default function Header() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 w-full p-4">
+    <header className="sticky top-0 z-50 w-full p-4 transition-all duration-300">
       <div 
-        className="max-w-screen-2xl mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8 rounded-2xl border-white/40"
+        className={cn(
+          "max-w-screen-2xl mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8 rounded-2xl border-white/40 transition-all duration-300",
+          scrolled ? "bg-card/80 backdrop-blur-xl" : "bg-transparent border-transparent"
+        )}
         style={{
-            background: "rgba(255, 255, 255, 0.22)",
-            boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
-            backdropFilter: "blur(1.5px)",
-          }}
+          boxShadow: scrolled ? "0 4px 30px rgba(0, 0, 0, 0.1)" : "none",
+        }}
       >
         <div className="flex items-center gap-2">
           <Wallet className="h-7 w-7 text-primary" />
@@ -63,7 +76,7 @@ export default function Header() {
                         <span className="sr-only">Toggle Menu</span>
                     </Button>
                 </SheetTrigger>
-                <SheetContent side="right">
+                <SheetContent side="right" className="bg-card/80 backdrop-blur-xl">
                     <div className="flex flex-col gap-4 py-8">
                         {navLinks.map((link) => (
                             <Button variant="ghost" asChild key={link.label}>

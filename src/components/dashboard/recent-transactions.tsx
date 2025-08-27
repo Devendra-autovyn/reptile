@@ -16,7 +16,7 @@ export default function RecentTransactions() {
         background: "rgba(255, 255, 255, 0.22)",
         borderRadius: "16px",
         boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
-        backdropFilter: "blur(1.5px)",
+        backdropFilter: "blur(5px)",
       }}
     >
       <CardHeader>
