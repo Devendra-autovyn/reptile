@@ -67,7 +67,7 @@
 }
 .bottom:after {
   transform: rotate(-135deg);
-  background: #cba3d5;
+  background: #9370DB;
 }
 
 .center {
