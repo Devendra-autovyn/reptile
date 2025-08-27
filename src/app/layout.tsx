@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
+import { BackgroundGradientAnimation } from '@/components/ui/background-gradient-animation';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -26,11 +27,11 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </head>
       <body 
-        className="font-body antialiased bg-cover bg-center bg-fixed dark"
-        style={{ backgroundImage: "radial-gradient(ellipse at top, #1e3a8a, #000000), radial-gradient(ellipse at bottom, #4c1d95, #000000)" }}
-        data-ai-hint="abstract background"
+        className="font-body antialiased dark"
       >
-        {children}
+        <BackgroundGradientAnimation>
+          {children}
+        </BackgroundGradientAnimation>
         <Toaster />
       </body>
     </html>

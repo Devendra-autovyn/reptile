@@ -78,10 +78,115 @@ export default {
             height: '0',
           },
         },
+        first: {
+          '0%': {
+            transform: 'translate(0%)',
+          },
+          '20%': {
+            transform: 'translate(5%, -10%)',
+          },
+          '40%': {
+            transform: 'translate(-5%, 15%)',
+          },
+          '60%': {
+            transform: 'translate(10%, 5%)',
+          },
+          '80%': {
+            transform: 'translate(-10%, -5%)',
+          },
+          '100%': {
+            transform: 'translate(0%)',
+          },
+        },
+        second: {
+          '0%': {
+            transform: 'translate(0%)',
+          },
+          '20%': {
+            transform: 'translate(10%, 5%)',
+          },
+          '40%': {
+            transform: 'translate(-15%, -10%)',
+          },
+          '60%': {
+            transform: 'translate(5%, -5%)',
+          },
+          '80%': {
+            transform: 'translate(-5%, 10%)',
+          },
+          '100%': {
+            transform: 'translate(0%)',
+          },
+        },
+        third: {
+          '0%': {
+            transform: 'translate(0%)',
+          },
+          '20%': {
+            transform: 'translate(-10%, -5%)',
+          },
+          '40%': {
+            transform: 'translate(5%, 10%)',
+          },
+          '60%': {
+            transform: 'translate(-10%, 15%)',
+          },
+          '80%': {
+            transform: 'translate(15%, -10%)',
+          },
+          '100%': {
+            transform: 'translate(0%)',
+          },
+        },
+        fourth: {
+          '0%': {
+            transform: 'translate(0%)',
+          },
+          '20%': {
+            transform: 'translate(15%, -10%)',
+          },
+          '40%': {
+            transform: 'translate(-10%, -15%)',
+          },
+          '60%': {
+            transform: 'translate(10%, 10%)',
+          },
+          '80%': {
+            transform: 'translate(-15%, 5%)',
+          },
+          '100%': {
+            transform: 'translate(0%)',
+          },
+        },
+        fifth: {
+          '0%': {
+            transform: 'translate(0%)',
+          },
+          '20%': {
+            transform: 'translate(-15%, 10%)',
+          },
+          '40%': {
+            transform: 'translate(10%, 15%)',
+          },
+          '60%': {
+            transform: 'translate(-5%, -10%)',
+          },
+          '80%': {
+            transform: 'translate(10%, -5%)',
+          },
+          '100%': {
+            transform: 'translate(0%)',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        first: 'first 15s ease-in-out infinite',
+        second: 'second 15s ease-in-out infinite',
+        third: 'third 15s ease-in-out infinite',
+        fourth: 'fourth 15s ease-in-out infinite',
+        fifth: 'fifth 15s ease-in-out infinite',
       },
       backgroundImage: {
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
