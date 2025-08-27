@@ -18,34 +18,13 @@ export default function RaptileLogo({ className }: { className?: string }) {
         </linearGradient>
       </defs>
       <path
-        d="M39.6,8.4A22,22,0,0,0,24,2,22,22,0,0,0,8.4,39.6,22,22,0,0,0,39.6,8.4Z"
+        d="M24 4C12.95 4 4 12.95 4 24C4 35.05 12.95 44 24 44C35.05 44 44 35.05 44 24C44 12.95 35.05 4 24 4Z"
+        stroke="url(#logo-gradient)"
+        strokeWidth="4"
+      />
+      <path
+        d="M21 16H31L23 24L31 32H21L13 24L21 16Z"
         fill="url(#logo-gradient)"
-        opacity="0.2"
-      />
-      <path
-        d="M38,10a20,20,0,1,0-28,28,20,20,0,0,0,28-28ZM24,36a12,12,0,1,1,12-12,12,12,0,0,1-12,12Z"
-        fill="url(#logo-gradient)"
-      />
-      <path
-        d="M26.5,20.5l-6,6"
-        stroke="white"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M29,18l-9,9"
-        stroke="white"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-       <path
-        d="M24,24l-3,3"
-        stroke="white"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
       />
     </svg>
   );
