@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { PlusCircle, ArrowDownCircle, CreditCard } from "lucide-react";
+import { BarChart } from "lucide-react";
 
 export default function BalanceCard() {
   return (
@@ -23,6 +24,9 @@ export default function BalanceCard() {
       <CardContent>
         <div className="text-4xl font-bold text-primary">$1,250.75</div>
         <p className="text-xs text-muted-foreground mt-1">+2.5% from last month</p>
+         <div className="h-24 w-full mt-4">
+          <BarChart className="h-full w-full text-primary/50" />
+        </div>
       </CardContent>
       <CardContent className="flex gap-4">
         <Button className="w-full">
