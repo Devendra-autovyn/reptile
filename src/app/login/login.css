@@ -55,7 +55,7 @@
 
 .top:before {
   transform: rotate(45deg);
-  background: #E6E6FA;
+  background: #90ee90;
 }
 .top:after {
   transform: rotate(135deg);
