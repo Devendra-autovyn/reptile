@@ -1,68 +1,85 @@
 import {
   Wallet,
   User,
-  Settings,
+  LayoutGrid,
+  History,
   LogOut,
-  Moon,
-  Sun,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import Link from "next/link";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
+
+const navLinks = [
+    { href: "#", label: "Home", icon: LayoutGrid },
+    { href: "#", label: "Wallet", icon: Wallet },
+    { href: "#", label: "History", icon: History },
+    { href: "#", label: "Profile", icon: User },
+];
+
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-card/80 backdrop-blur">
-      <div className="max-w-screen-2xl mx-auto flex h-16 items-center px-4 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-50 w-full p-4">
+      <div 
+        className="max-w-screen-2xl mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8 rounded-2xl border-white/40"
+        style={{
+            background: "rgba(255, 255, 255, 0.22)",
+            boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+            backdropFilter: "blur(1.5px)",
+          }}
+      >
         <div className="flex items-center gap-2">
           <Wallet className="h-7 w-7 text-primary" />
           <h1 className="text-xl font-bold text-foreground">NovaPay</h1>
         </div>
-        <div className="flex flex-1 items-center justify-end space-x-4">
-          <nav className="flex items-center space-x-2">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="relative h-10 w-10 rounded-full">
-                  <Avatar>
-                    <AvatarImage src="https://picsum.photos/100" alt="User Avatar" data-ai-hint="user avatar" />
-                    <AvatarFallback>JD</AvatarFallback>
-                  </Avatar>
+        
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex items-center gap-2">
+            {navLinks.map((link) => (
+                <Button variant="ghost" asChild key={link.label}>
+                    <Link href={link.href}>
+                        <link.icon className="mr-2 h-4 w-4" />
+                        {link.label}
+                    </Link>
                 </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-56" align="end" forceMount>
-                <DropdownMenuLabel className="font-normal">
-                  <div className="flex flex-col space-y-1">
-                    <p className="text-sm font-medium leading-none">John Doe</p>
-                    <p className="text-xs leading-none text-muted-foreground">
-                      john.doe@example.com
-                    </p>
-                  </div>
-                </DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>
-                  <User className="mr-2 h-4 w-4" />
-                  <span>Profile</span>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Settings className="mr-2 h-4 w-4" />
-                  <span>Settings</span>
-                </DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>
-                  <LogOut className="mr-2 h-4 w-4" />
-                  <span>Log out</span>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </nav>
+            ))}
+        </nav>
+        
+        <div className="hidden md:flex items-center">
+            <Button>
+                <LogOut className="mr-2 h-4 w-4" />
+                Logout
+            </Button>
+        </div>
+
+        {/* Mobile Nav */}
+        <div className="md:hidden">
+            <Sheet>
+                <SheetTrigger asChild>
+                    <Button variant="ghost" size="icon">
+                        <Menu />
+                        <span className="sr-only">Toggle Menu</span>
+                    </Button>
+                </SheetTrigger>
+                <SheetContent side="right">
+                    <div className="flex flex-col gap-4 py-8">
+                        {navLinks.map((link) => (
+                            <Button variant="ghost" asChild key={link.label}>
+                                <Link href={link.href}>
+                                    <link.icon className="mr-2 h-4 w-4" />
+                                    {link.label}
+                                </Link>
+                            </Button>
+                        ))}
+                        <Button>
+                            <LogOut className="mr-2 h-4 w-4" />
+                            Logout
+                        </Button>
+                    </div>
+                </SheetContent>
+            </Sheet>
         </div>
       </div>
     </header>
