@@ -5,6 +5,7 @@ import { Users, FilePlus2 } from "lucide-react";
 export default function SplitBillCard() {
   return (
     <Card
+      className="h-full flex flex-col"
       style={{
         background: "rgba(255, 255, 255, 0.22)",
         borderRadius: "16px",
@@ -19,11 +20,13 @@ export default function SplitBillCard() {
         </div>
         <Users className="h-6 w-6 text-primary" />
       </CardHeader>
-      <CardContent>
+      <CardContent className="flex-1">
         <p className="text-sm text-muted-foreground">
             Easily split restaurant bills, rent, or trip expenses. No more awkward conversations about who owes what.
         </p>
-        <Button className="w-full mt-6">
+      </CardContent>
+      <CardContent>
+        <Button className="w-full">
             <FilePlus2 className="mr-2 h-4 w-4" /> Create a Split
         </Button>
       </CardContent>
