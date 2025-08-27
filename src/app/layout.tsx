@@ -30,14 +30,14 @@ export default function RootLayout({
         className="font-body antialiased dark"
       >
         <BackgroundGradientAnimation
-          gradientBackgroundStart="hsl(var(--background))"
-          gradientBackgroundEnd="hsl(240, 50%, 85%)" // Light sky blue tone
-          firstColor="255, 230, 230" // Lavender tone
-          secondColor="204, 204, 255" // Periwinkle tone
-          thirdColor="173, 216, 230" // Light sky blue
-          fourthColor="230, 230, 250" // Lavender
-          fifthColor="204, 204, 255" // Periwinkle
-          pointerColor="230, 230, 250" // Lavender
+          gradientBackgroundStart="rgb(27, 27, 47)"
+          gradientBackgroundEnd="rgb(31, 64, 104)"
+          firstColor="31, 64, 104"
+          secondColor="228, 63, 90"
+          thirdColor="233, 69, 96"
+          fourthColor="27, 27, 47"
+          fifthColor="31, 64, 104"
+          pointerColor="228, 63, 90"
           containerClassName="fixed top-0 left-0 w-screen h-screen -z-10"
         >
         </BackgroundGradientAnimation>
