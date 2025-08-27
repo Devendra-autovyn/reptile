@@ -25,7 +25,10 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </head>
-      <body className="font-body antialiased">
+      <body 
+        className="font-body antialiased bg-cover bg-center bg-fixed"
+        style={{ backgroundImage: "url('https://picsum.photos/1920/1080?blur=5')" }}
+      >
         {children}
         <Toaster />
       </body>

@@ -7,7 +7,7 @@ import RecentTransactions from "@/components/dashboard/recent-transactions";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-secondary/50 font-body">
+    <div className="flex flex-col min-h-screen font-body">
       <Header />
       <main className="flex-1 p-4 sm:p-6 lg:p-8">
         <div className="max-w-screen-2xl mx-auto grid grid-cols-1 xl:grid-cols-5 gap-8">
