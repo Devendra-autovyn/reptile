@@ -15,16 +15,16 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.login-container .top:before,
-.login-container .top:after,
-.login-container .bottom:before,
-.login-container .bottom:after {
+.login-container.loaded .top:before,
+.login-container.loaded .top:after,
+.login-container.loaded .bottom:before,
+.login-container.loaded .bottom:after {
   margin-left: 200px;
   transform-origin: -200px 50%;
   transition-delay: 0s;
 }
 
-.login-container .center {
+.login-container.loaded .center {
   opacity: 1;
   transition-delay: 0.2s;
 }

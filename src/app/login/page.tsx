@@ -45,7 +45,7 @@ export default function Login() {
             type="password"
             placeholder="Password"
             value={password}
-            onChange={(e) => setPassword(e.targe.value)}
+            onChange={(e) => setPassword(e.target.value)}
             required
           />
           <input type="submit" value="Login" />
