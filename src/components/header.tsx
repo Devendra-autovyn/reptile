@@ -79,7 +79,7 @@ export default function Header() {
                     key={link.label}
                     data-label={link.label}
                     onClick={() => setActiveTab(link.label)}
-                    className={cn("transition-colors duration-300 relative z-20", activeTab === link.label ? "text-primary-foreground" : "")}
+                    className={cn("transition-colors duration-300 relative z-10 px-4 py-2", activeTab === link.label ? "text-white" : "text-white/60")}
                 >
                     <Link href={link.href}>
                         <link.icon className="mr-2 h-4 w-4" />
@@ -89,14 +89,15 @@ export default function Header() {
             ))}
              {activeTab && (
                 <div
-                    className="absolute top-0 bottom-0 h-full transition-all duration-300 bg-primary/20 rounded-md"
+                    className="absolute -bottom-2.5 left-0 h-full rounded-full transition-all duration-300"
                     style={indicatorStyle}
                 >
                     <SparklesCore
+                        id="tsparticlesfullpage"
                         background="transparent"
-                        minSize={0.4}
-                        maxSize={1}
-                        particleDensity={1200}
+                        minSize={0.6}
+                        maxSize={1.4}
+                        particleDensity={100}
                         className="w-full h-full"
                         particleColor="#FFFFFF"
                     />
