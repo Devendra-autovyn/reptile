@@ -15,7 +15,7 @@ import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
 import RaptileLogo from "./RaptileLogo";
-import { SparklesCore } from "./ui/sparkles";
+import { motion } from "framer-motion";
 
 const navLinks = [
     { href: "#", label: "Home", icon: LayoutGrid },
@@ -88,20 +88,16 @@ export default function Header() {
                 </Button>
             ))}
              {activeTab && (
-                <div
-                    className="absolute -bottom-2.5 left-0 h-full rounded-full transition-all duration-300"
-                    style={indicatorStyle}
+                <motion.div
+                    className="absolute h-full rounded-full -z-10"
+                    layoutId="active-nav-indicator"
+                    initial={false}
+                    animate={indicatorStyle}
+                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
                 >
-                    <SparklesCore
-                        id="tsparticlesfullpage"
-                        background="transparent"
-                        minSize={0.6}
-                        maxSize={1.4}
-                        particleDensity={100}
-                        className="w-full h-full"
-                        particleColor="#FFFFFF"
-                    />
-                </div>
+                  <div className="absolute inset-auto z-30 h-12 w-full rounded-full bg-cyan-400 blur-xl"></div>
+                  <div className="absolute inset-auto z-50 h-0.5 w-full bg-cyan-400"></div>
+                </motion.div>
             )}
         </nav>
         
