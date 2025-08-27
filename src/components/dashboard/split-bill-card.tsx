@@ -55,7 +55,7 @@ export default function SplitBillCard() {
                         <FilePlus2 className="mr-2 h-4 w-4" /> Create a Split Group
                     </Button>
                   </DialogTrigger>
-                  <DialogContent className="sm:max-w-[425px] bg-card/80 backdrop-blur-xl">
+                  <DialogContent className="sm:max-w-[425px] bg-card text-card-foreground">
                     <DialogHeader>
                       <DialogTitle>Create New Split Group</DialogTitle>
                       <DialogDescription>
