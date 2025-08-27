@@ -6,6 +6,7 @@ import RecentTransactions from "@/components/dashboard/recent-transactions";
 import GoalsCard from "@/components/dashboard/goals-card";
 import InstantPayCard from "@/components/dashboard/instant-pay-card";
 import { redirect } from 'next/navigation';
+import Footer from "@/components/footer";
 
 export default function Home() {
   const isAuthenticated = true;
@@ -36,6 +37,7 @@ export default function Home() {
 
         </div>
       </main>
+      <Footer />
     </div>
   );
 }
