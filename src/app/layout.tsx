@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Raptile - Fast, Secure, Limitless',
+  title: 'NovaPay - Modern Finance',
   description: 'Your modern solution for instant payments, bill splitting, and secure savings.',
 };
 
@@ -29,9 +29,21 @@ export default function RootLayout({
       <body 
         className="font-body antialiased dark"
       >
-        <BackgroundGradientAnimation>
-          {children}
+        <BackgroundGradientAnimation
+          gradientBackgroundStart="hsl(var(--background))"
+          gradientBackgroundEnd="hsl(240, 50%, 85%)" // Light sky blue tone
+          firstColor="255, 230, 230" // Lavender tone
+          secondColor="204, 204, 255" // Periwinkle tone
+          thirdColor="173, 216, 230" // Light sky blue
+          fourthColor="230, 230, 250" // Lavender
+          fifthColor="204, 204, 255" // Periwinkle
+          pointerColor="230, 230, 250" // Lavender
+          containerClassName="fixed top-0 left-0 w-screen h-screen -z-10"
+        >
         </BackgroundGradientAnimation>
+        <div className="relative z-10">
+          {children}
+        </div>
         <Toaster />
       </body>
     </html>
