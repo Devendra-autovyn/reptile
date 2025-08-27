@@ -80,7 +80,7 @@ export default function Header() {
                     <div className="flex flex-col gap-4 py-8">
                         {navLinks.map((link) => (
                             <Button variant="ghost" asChild key={link.label}>
-                                <Link href={link.href}>
+                                <Link href={link.href} className="text-white">
                                     <link.icon className="mr-2 h-4 w-4" />
                                     {link.label}
                                 </Link>
