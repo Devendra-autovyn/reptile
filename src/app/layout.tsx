@@ -27,7 +27,8 @@ export default function RootLayout({
       </head>
       <body 
         className="font-body antialiased bg-cover bg-center bg-fixed"
-        style={{ backgroundImage: "url('https://picsum.photos/1920/1080?blur=5')" }}
+        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1554034483-04fda0d3507b?q=80&w=2070&auto=format&fit=crop')" }}
+        data-ai-hint="abstract background"
       >
         {children}
         <Toaster />
