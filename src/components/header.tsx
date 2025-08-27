@@ -79,7 +79,7 @@ export default function Header() {
                     key={link.label}
                     data-label={link.label}
                     onClick={() => setActiveTab(link.label)}
-                    className={cn("transition-colors duration-300 relative z-10 px-4 py-2", activeTab === link.label ? "text-white" : "text-white/60")}
+                    className={cn("transition-colors duration-300 relative z-10 px-4 py-2 hover:bg-transparent", activeTab === link.label ? "text-white" : "text-white/60 hover:text-white")}
                 >
                     <Link href={link.href}>
                         <link.icon className="mr-2 h-4 w-4" />
