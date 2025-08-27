@@ -18,8 +18,6 @@ export default function Login() {
 
   return (
     <div className="login-page-container">
-      <div className="top"></div>
-      <div className="bottom"></div>
       <div className="center">
         <h1 className="logo">🌀 Raptile</h1>
         <p className="tagline">Fast • Secure • Limitless</p>
