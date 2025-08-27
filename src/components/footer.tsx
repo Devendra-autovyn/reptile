@@ -8,7 +8,7 @@ export default function Footer() {
       <WavyBackground
         className="w-full"
         containerClassName="h-48"
-        colors={["#1f4068", "#e43f5a", "#1b1b2f", "#e94560"]}
+        colors={["#3b82f6", "#8b5cf6", "#e11d48", "#fde047"]}
         backgroundFill="transparent"
         blur={5}
         speed="slow"
