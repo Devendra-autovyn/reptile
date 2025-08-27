@@ -1,8 +1,22 @@
+"use client";
+
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Users, FilePlus2 } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import CreateSplitGroupForm from "./create-split-group-form";
+import { useState } from "react";
 
 export default function SplitBillCard() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <Card
       className="flex flex-col"
@@ -26,9 +40,22 @@ export default function SplitBillCard() {
         </p>
       </CardContent>
       <CardContent>
-        <Button className="w-full">
-            <FilePlus2 className="mr-2 h-4 w-4" /> Create a Split
-        </Button>
+        <Dialog open={isOpen} onOpenChange={setIsOpen}>
+          <DialogTrigger asChild>
+            <Button className="w-full">
+                <FilePlus2 className="mr-2 h-4 w-4" /> Create a Split
+            </Button>
+          </DialogTrigger>
+          <DialogContent className="sm:max-w-[425px] bg-card/80 backdrop-blur-xl">
+            <DialogHeader>
+              <DialogTitle>Create New Split Group</DialogTitle>
+              <DialogDescription>
+                Enter the details for your new group to start splitting bills.
+              </DialogDescription>
+            </DialogHeader>
+            <CreateSplitGroupForm setDialogOpen={setIsOpen} />
+          </DialogContent>
+        </Dialog>
       </CardContent>
     </Card>
   );
