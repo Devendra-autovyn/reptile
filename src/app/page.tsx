@@ -15,12 +15,14 @@ export default function Home() {
           
           <div className="lg:col-span-2 flex flex-col gap-8">
             <BalanceCard />
-            <InstantPayCard />
+            <div className="grid md:grid-cols-2 gap-8">
+              <InstantPayCard />
+              <SecureVaultCard />
+            </div>
             <RecentTransactions />
           </div>
 
           <div className="lg:col-span-1 flex flex-col gap-8">
-            <SecureVaultCard />
             <SplitBillCard />
             <GoalsCard />
           </div>

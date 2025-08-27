@@ -11,7 +11,9 @@ import {
   DialogDescription,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import CreateSplitGroupForm from "./create-split-group-form";
+import MyGroups from "./my-groups";
 import { useState } from "react";
 
 export default function SplitBillCard() {
@@ -19,7 +21,6 @@ export default function SplitBillCard() {
 
   return (
     <Card
-      className="flex flex-col"
       style={{
         background: "rgba(255, 255, 255, 0.22)",
         borderRadius: "16px",
@@ -34,28 +35,39 @@ export default function SplitBillCard() {
         </div>
         <Users className="h-6 w-6 text-primary" />
       </CardHeader>
-      <CardContent className="flex-1">
-        <p className="text-sm text-muted-foreground">
-            Easily split restaurant bills, rent, or trip expenses. No more awkward conversations about who owes what.
-        </p>
-      </CardContent>
       <CardContent>
-        <Dialog open={isOpen} onOpenChange={setIsOpen}>
-          <DialogTrigger asChild>
-            <Button className="w-full">
-                <FilePlus2 className="mr-2 h-4 w-4" /> Create a Split
-            </Button>
-          </DialogTrigger>
-          <DialogContent className="sm:max-w-[425px] bg-card/80 backdrop-blur-xl">
-            <DialogHeader>
-              <DialogTitle>Create New Split Group</DialogTitle>
-              <DialogDescription>
-                Enter the details for your new group to start splitting bills.
-              </DialogDescription>
-            </DialogHeader>
-            <CreateSplitGroupForm setDialogOpen={setIsOpen} />
-          </DialogContent>
-        </Dialog>
+        <Tabs defaultValue="my-groups">
+          <TabsList className="grid w-full grid-cols-2">
+            <TabsTrigger value="my-groups">My Groups</TabsTrigger>
+            <TabsTrigger value="create">Create New</TabsTrigger>
+          </TabsList>
+          <TabsContent value="my-groups" className="mt-4">
+            <MyGroups />
+          </TabsContent>
+          <TabsContent value="create" className="mt-4">
+             <div className="text-center p-4 border-dashed border-2 border-border rounded-lg">
+                <p className="text-sm text-muted-foreground mb-4">
+                    Easily split restaurant bills, rent, or trip expenses. No more awkward conversations about who owes what.
+                </p>
+                <Dialog open={isOpen} onOpenChange={setIsOpen}>
+                  <DialogTrigger asChild>
+                    <Button>
+                        <FilePlus2 className="mr-2 h-4 w-4" /> Create a Split Group
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-[425px] bg-card/80 backdrop-blur-xl">
+                    <DialogHeader>
+                      <DialogTitle>Create New Split Group</DialogTitle>
+                      <DialogDescription>
+                        Enter the details for your new group to start splitting bills.
+                      </DialogDescription>
+                    </DialogHeader>
+                    <CreateSplitGroupForm setDialogOpen={setIsOpen} />
+                  </DialogContent>
+                </Dialog>
+            </div>
+          </TabsContent>
+        </Tabs>
       </CardContent>
     </Card>
   );
