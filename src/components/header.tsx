@@ -15,7 +15,7 @@ import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
 import RaptileLogo from "./RaptileLogo";
-import "./header.css";
+import { SparklesCore } from "./ui/sparkles";
 
 const navLinks = [
     { href: "#", label: "Home", icon: LayoutGrid },
@@ -79,7 +79,7 @@ export default function Header() {
                     key={link.label}
                     data-label={link.label}
                     onClick={() => setActiveTab(link.label)}
-                    className={cn("transition-colors duration-300", activeTab === link.label ? "text-primary-foreground" : "")}
+                    className={cn("transition-colors duration-300 relative z-20", activeTab === link.label ? "text-primary-foreground" : "")}
                 >
                     <Link href={link.href}>
                         <link.icon className="mr-2 h-4 w-4" />
@@ -87,7 +87,21 @@ export default function Header() {
                     </Link>
                 </Button>
             ))}
-            <div className="nav-indicator" style={indicatorStyle}></div>
+             {activeTab && (
+                <div
+                    className="absolute top-0 bottom-0 h-full transition-all duration-300 bg-primary/20 rounded-md"
+                    style={indicatorStyle}
+                >
+                    <SparklesCore
+                        background="transparent"
+                        minSize={0.4}
+                        maxSize={1}
+                        particleDensity={1200}
+                        className="w-full h-full"
+                        particleColor="#FFFFFF"
+                    />
+                </div>
+            )}
         </nav>
         
         <div className="hidden md:flex items-center">
