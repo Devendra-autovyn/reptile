@@ -4,7 +4,14 @@ import { ShieldCheck, PiggyBank } from "lucide-react";
 
 export default function SecureVaultCard() {
   return (
-    <Card>
+    <Card
+      style={{
+        background: "rgba(255, 255, 255, 0.22)",
+        borderRadius: "16px",
+        boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+        backdropFilter: "blur(1.5px)",
+      }}
+    >
       <CardHeader className="flex flex-row items-center justify-between pb-2">
         <div>
             <CardTitle>Secure Vault</CardTitle>

@@ -49,7 +49,14 @@ export default function InstantPayCard() {
   }
 
   return (
-    <Card>
+    <Card
+      style={{
+        background: "rgba(255, 255, 255, 0.22)",
+        borderRadius: "16px",
+        boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+        backdropFilter: "blur(1.5px)",
+      }}
+    >
       <CardHeader>
         <CardTitle>Instant Pay</CardTitle>
         <CardDescription>Send money to your contacts in a flash.</CardDescription>

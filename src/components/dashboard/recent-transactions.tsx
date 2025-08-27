@@ -11,7 +11,14 @@ const transactions = [
 
 export default function RecentTransactions() {
   return (
-    <Card>
+    <Card
+      style={{
+        background: "rgba(255, 255, 255, 0.22)",
+        borderRadius: "16px",
+        boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+        backdropFilter: "blur(1.5px)",
+      }}
+    >
       <CardHeader>
         <CardTitle>Recent Transactions</CardTitle>
         <CardDescription>An overview of your latest activity.</CardDescription>
