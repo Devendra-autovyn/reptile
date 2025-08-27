@@ -5,7 +5,7 @@ import { Users, FilePlus2 } from "lucide-react";
 export default function SplitBillCard() {
   return (
     <Card
-      className="h-full flex flex-col"
+      className="flex flex-col"
       style={{
         background: "rgba(255, 255, 255, 0.22)",
         borderRadius: "16px",

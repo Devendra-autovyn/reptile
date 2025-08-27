@@ -5,7 +5,7 @@ import { ShieldCheck, PiggyBank } from "lucide-react";
 export default function SecureVaultCard() {
   return (
     <Card
-      className="h-full flex flex-col"
+      className="flex flex-col"
       style={{
         background: "rgba(255, 255, 255, 0.22)",
         borderRadius: "16px",
