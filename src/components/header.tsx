@@ -45,7 +45,7 @@ export default function Header() {
       >
         <div className="flex items-center gap-2">
           <Wallet className="h-7 w-7 text-primary" />
-          <h1 className="text-xl font-bold text-foreground">NovaPay</h1>
+          <h1 className="text-xl font-bold text-foreground">Raptile</h1>
         </div>
         
         {/* Desktop Nav */}

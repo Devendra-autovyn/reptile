@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'NovaPay - Seamless Digital Wallet',
+  title: 'Raptile - Fast, Secure, Limitless',
   description: 'Your modern solution for instant payments, bill splitting, and secure savings.',
 };
 

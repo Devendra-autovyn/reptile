@@ -20,8 +20,8 @@ export default function Login() {
       <div className="top"></div>
       <div className="bottom"></div>
       <div className="center">
-        <h1 className="logo">NovaPay</h1>
-        <p className="tagline">Seamless Digital Wallet</p>
+        <h1 className="logo">🌀 Raptile</h1>
+        <p className="tagline">Fast • Secure • Limitless</p>
 
         <form onSubmit={handleSubmit}>
           <input
