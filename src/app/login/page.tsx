@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import "./login.css";
-import RaptileLogo from "@/components/RaptileLogo";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -13,22 +12,18 @@ export default function Login() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Basic validation
     if (email && password) {
       router.push("/");
-    } else {
-      alert("Please enter email and password.");
     }
   };
 
   return (
-    <div className="login-page-container">
-      <div className="login-card">
-        <div className="flex items-center gap-3 mb-2 justify-center">
-          <RaptileLogo className="h-12 w-12" />
-          <h1 className="logo">Raptile</h1>
-        </div>
-        <p className="tagline text-center">Welcome back</p>
+    <div className="login-container">
+      <div className="top"></div>
+      <div className="bottom"></div>
+      <div className="center">
+        <h1 className="logo">🌀 Raptile</h1>
+        <p className="tagline">Fast • Secure • Limitless</p>
 
         <form onSubmit={handleSubmit}>
           <input
@@ -48,10 +43,9 @@ export default function Login() {
           <input type="submit" value="Login" />
         </form>
 
-        <div className="links mt-4 text-center">
-          <a href="#" className="text-sm">Forgot Password?</a>
-          <span className="mx-2">|</span>
-          <Link href="/signup" className="text-sm">Create Account</Link>
+        <div className="links">
+          <a href="#">Forgot Password?</a>
+          <Link href="/signup">Create Account</Link>
         </div>
       </div>
     </div>
