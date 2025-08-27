@@ -43,7 +43,7 @@ export default function Login() {
 
         <div className="links">
           <a href="#">Forgot Password?</a>
-          <Link href="#">Create Account</Link>
+          <Link href="/signup">Create Account</Link>
         </div>
       </div>
     </div>
