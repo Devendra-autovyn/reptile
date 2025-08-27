@@ -1,10 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import "./login.css";
-import RaptileLogo from "@/components/RaptileLogo";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -18,11 +17,10 @@ export default function Login() {
 
   return (
     <div className="login-page-container">
-      <div className="login-card">
-        <div className="flex items-center gap-3 mb-2">
-          <RaptileLogo className="h-12 w-12" />
-          <h1 className="logo">Raptile</h1>
-        </div>
+      <div className="top"></div>
+      <div className="bottom"></div>
+      <div className="center">
+        <h1 className="logo">🌀 Raptile</h1>
         <p className="tagline">Fast • Secure • Limitless</p>
 
         <form onSubmit={handleSubmit}>
