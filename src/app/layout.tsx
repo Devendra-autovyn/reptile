@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'NovaPay - Modern Finance',
+  title: 'Reptile',
   description: 'Your modern solution for instant payments, bill splitting, and secure savings.',
 };
 

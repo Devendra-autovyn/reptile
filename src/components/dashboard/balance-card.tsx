@@ -28,6 +28,7 @@ export default function BalanceCard() {
           borderRadius: "16px",
           boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
           backdropFilter: "blur(5px)",
+          height: "100%",
         }}
       >
         <CardHeader className="flex flex-row items-center justify-between pb-2">

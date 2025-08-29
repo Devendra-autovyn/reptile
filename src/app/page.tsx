@@ -21,24 +21,25 @@ export default function Home() {
       <Header />
       <TracingBeam>
         <main className="flex-1 p-4 sm:p-6 lg:p-8">
-          <div className="max-w-screen-2xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-            <div className="lg:col-span-2 flex flex-col gap-8">
+          <div className="max-w-screen-2xl mx-auto grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="lg:col-span-2">
               <BalanceCard />
-              <div className="grid md:grid-cols-2 gap-8">
-                <InstantPayCard />
-                <SecureVaultCard />
-              </div>
+            </div>
+            <InstantPayCard />
+            <SecureVaultCard />
+            <div className="lg:col-span-2">
               <RecentTransactions />
             </div>
-
-            <div className="lg:col-span-1 flex flex-col gap-8">
+            <div className="lg:col-span-2">
               <SplitBillCard />
-              <GoalsCard />
             </div>
+              <GoalsCard />
           </div>
         </main>
       </TracingBeam>
-      <Footer />
+      <div className="p-1">
+        <Footer />
+      </div>
     </div>
   );
 }

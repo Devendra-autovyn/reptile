@@ -9,6 +9,7 @@ import {
   LogOut,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import Link from "next/link";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
@@ -65,9 +66,10 @@ export default function Header() {
           boxShadow: scrolled ? "0 4px 30px rgba(0, 0, 0, 0.1)" : "none",
         }}
       >
+        
         <div className="flex items-center gap-2">
           <RaptileLogo />
-          <h1 className="text-xl font-bold text-foreground">Raptile</h1>
+          <h1 className="text-xl font-bold text-foreground">Reptile</h1>
         </div>
         
         {/* Desktop Nav */}
@@ -102,10 +104,15 @@ export default function Header() {
         </nav>
         
         <div className="hidden md:flex items-center">
-            <Button onClick={handleLogout}>
-                <LogOut className="mr-2 h-4 w-4" />
-                Logout
-            </Button>
+      <HoverBorderGradient
+        as="button"
+        onClick={handleLogout}
+        containerClassName="rounded-full"
+        className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-pink-600 to-pink-500 text-white dark:bg-black dark:text-white"
+      >
+        <LogOut className="mr-2 h-4 w-4" />
+        <span>Logout</span>
+      </HoverBorderGradient>
         </div>
 
         {/* Mobile Nav */}
@@ -127,10 +134,15 @@ export default function Header() {
                                 </Link>
                             </Button>
                         ))}
-                        <Button onClick={handleLogout}>
-                            <LogOut className="mr-2 h-4 w-4" />
-                            Logout
-                        </Button>
+            <HoverBorderGradient
+              as="button"
+              onClick={handleLogout}
+              containerClassName="rounded-full"
+              className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-pink-600 to-pink-500 text-white dark:bg-black dark:text-white"
+            >
+              <LogOut className="mr-2 h-4 w-4" />
+              <span>Logout</span>
+            </HoverBorderGradient>
                     </div>
                 </SheetContent>
             </Sheet>
