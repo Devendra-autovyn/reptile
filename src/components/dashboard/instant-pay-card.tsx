@@ -20,8 +20,15 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Send, DollarSign } from "lucide-react";
+import { GlowingEffect } from "../ui/glowing-effect";
 
 const formSchema = z.object({
   recipient: z.string().min(1, "Please select a recipient."),
@@ -49,67 +56,87 @@ export default function InstantPayCard() {
   }
 
   return (
-    <Card
-      style={{
-        background: "rgba(255, 255, 255, 0.22)",
-        borderRadius: "16px",
-        boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
-        backdropFilter: "blur(5px)",
-      }}
-    >
-      <CardHeader>
-        <CardTitle>Instant Pay</CardTitle>
-        <CardDescription>Send money to your contacts in a flash.</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-            <FormField
-              control={form.control}
-              name="recipient"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Recipient</FormLabel>
-                  <Select onValueChange={field.onChange} defaultValue={field.value}>
-                    <FormControl>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select from recent payees" />
-                      </SelectTrigger>
-                    </FormControl>
-                    <SelectContent>
-                      {recentPayees.map((payee) => (
-                        <SelectItem key={payee.id} value={payee.id}>
-                          {payee.name}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="amount"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Amount</FormLabel>
-                  <div className="relative">
-                     <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                    <FormControl>
-                      <Input type="number" placeholder="0.00" className="pl-10" {...field} />
-                    </FormControl>
-                  </div>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <Button type="submit" className="w-full">
-              <Send className="mr-2 h-4 w-4" /> Pay Now
-            </Button>
-          </form>
-        </Form>
-      </CardContent>
-    </Card>
+    <div className="relative h-full  rounded-lg md:rounded-3xl md:p-3">
+      <GlowingEffect
+        spread={40}
+        glow={true}
+        disabled={false}
+        proximity={64}
+        borderWidth={2}
+        inactiveZone={0.01}
+      />
+      <Card
+        style={{
+          background: "rgba(255, 255, 255, 0.22)",
+          borderRadius: "16px",
+          boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+          backdropFilter: "blur(5px)",
+        }}
+      >
+        <CardHeader>
+          <CardTitle>Instant Pay</CardTitle>
+          <CardDescription>
+            Send money to your contacts in a flash.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              <FormField
+                control={form.control}
+                name="recipient"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Recipient</FormLabel>
+                    <Select
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                    >
+                      <FormControl>
+                        <SelectTrigger>
+                          <SelectValue placeholder="Select from recent payees" />
+                        </SelectTrigger>
+                      </FormControl>
+                      <SelectContent>
+                        {recentPayees.map((payee) => (
+                          <SelectItem key={payee.id} value={payee.id}>
+                            {payee.name}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="amount"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Amount</FormLabel>
+                    <div className="relative">
+                      <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                      <FormControl>
+                        <Input
+                          type="number"
+                          placeholder="0.00"
+                          className="pl-10"
+                          {...field}
+                        />
+                      </FormControl>
+                    </div>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <Button type="submit" className="w-full">
+                <Send className="mr-2 h-4 w-4" /> Pay Now
+              </Button>
+            </form>
+          </Form>
+        </CardContent>
+      </Card>
+    </div>
   );
 }
