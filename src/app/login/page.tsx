@@ -7,6 +7,7 @@ import "./login.css";
 import { FlipWords } from "@/components/ui/flip-words";
 import { Spotlight } from "@/components/ui/spotlight";
 import RaptileLogo from "@/components/RaptileLogo";
+import ColourfulText from "@/components/ui/colourful-text";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -27,9 +28,11 @@ export default function Login() {
       <div className="center">
         <div className="flex items-center gap-2">
           <RaptileLogo />
-          <h1 className="text-3xl font-bold text-foreground">Reptile</h1>
+          <h1 className="text-3xl font-bold text-foreground">
+            <ColourfulText text="Reptile" />
+          </h1>{" "}
         </div>{" "}
-        <span className="text-lg mt-1 text-muted-foreground text-center">
+        <span className="text-lg mt-1 text-muted-foreground text-center ml-5">
           <FlipWords
             words={["Fast.", "Secure.", "Limitless."]}
             duration={2000}

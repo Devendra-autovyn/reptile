@@ -5,6 +5,7 @@ import { Spotlight } from "./ui/spotlight";
 import { FlipWords } from "./ui/flip-words";
 import { GlowingEffect } from "./ui/glowing-effect";
 import RaptileLogo from "./RaptileLogo";
+import ColourfulText from "./ui/colourful-text";
 
 export default function Footer() {
   return (
@@ -24,12 +25,12 @@ export default function Footer() {
             glow={true}
             disabled={false}
             proximity={64}
-                  borderWidth={2}
-                  inactiveZone={0.01}
-                />
+            borderWidth={2}
+            inactiveZone={0.01}
+          />
         </div>
       </div>
-      
+
       <BackgroundLines className="flex items-center justify-center flex-col text-center h-full">
         <div className="py-8 relative">
           <Spotlight
@@ -38,9 +39,11 @@ export default function Footer() {
           />
           <div className="flex items-center justify-center gap-2 mb-2">
             <RaptileLogo />
-            <h1 className="text-5xl font-bold text-foreground">Reptile</h1>
+            <h1 className="text-5xl font-bold text-foreground">
+              <ColourfulText text="Reptile" />
+            </h1>{" "}
           </div>
-          <span className="text-xl md:text-2xl text-muted-foreground">
+          <span className="text-xl md:text-2xl text-muted-foreground ml-5">
             <FlipWords
               words={["Fast.", "Secure.", "Limitless."]}
               duration={2000}

@@ -10,11 +10,7 @@ import Footer from "@/components/footer";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 
 export default function Home() {
-  const isAuthenticated = true;
 
-  if (!isAuthenticated) {
-    redirect("/login");
-  }
 
   return (
     <div className="flex flex-col min-h-screen font-body">
